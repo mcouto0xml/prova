@@ -39,7 +39,6 @@ void setup() {
     HTTPClient http;
 
     String serverPath = "http://www.google.com.br/"; // Endpoint da requisição HTTP
-
     http.begin(serverPath.c_str());
 
     int httpResponseCode = http.GET(); // Código do Resultado da Requisição HTTP
@@ -162,6 +161,10 @@ void loop() {
         
         if (contador == 3) {
           Serial.println("Manda mensagem HTTP");
+          String alerta = "http://www.google.com.br/" + "?alerta=botaoapertado"
+          http.begin(alerta.c_str());
+          int httpResponseCode = http.GET();
+          http.end();
         }
 
       }
