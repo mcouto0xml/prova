@@ -74,7 +74,7 @@ void modoNoite() {
 class Dia {
   public:
     Dia();
-    // Define o método a ser construído
+
     void semaforoFunciona();
   private:
     unsigned long ultimaMudanca = 0;
@@ -84,12 +84,12 @@ class Dia {
     char ledAtual = 'r';
 };
 
-// Construtor da classe Day
+
 Dia::Dia() {}
 
-// Cria o método semaforoFunciona da classe Day
+
 void Dia::semaforoFunciona() {
-  // Realiza o funcionamento do farol de acordo com a regra de negócios e envia o estado e cor atual
+
   unsigned long tempoAtual = millis();
   if (ledAtual == 'r' && tempoAtual - ultimaMudanca >= vermelhoTempo) {
     ultimaMudanca = tempoAtual;
